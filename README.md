@@ -1,2 +1,1 @@
-# blog
-blog
+# blog文章集合
