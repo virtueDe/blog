@@ -1,7 +1,7 @@
 module.exports = [
   {
     text: '博客文章',
-    link: '/article/'
+    link: encodeURI('/article/style/图片如何自适应容器/')
   },
   {
     text: '代码片段',

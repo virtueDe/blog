@@ -1,9 +1,9 @@
 ---
 home: true
 heroImage: /images/ddd.jpg
-# actions:
-#   - text: Get Started
-#     link: /guide/getting-started.html
+actions:
+  - text: 开始
+    link: /article/style/图片如何自适应容器/
 #     type: primary
 #   - text: Introduction
 #     link: /guide/
