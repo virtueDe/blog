@@ -9,6 +9,6 @@ module.exports = {
   theme: defaultTheme({
     sidebar,
     navbar,
-    sidebarDepth: 2, // 侧边栏显示2级
+    sidebarDepth: 2, // 侧边栏显示2级;
   })
 }
