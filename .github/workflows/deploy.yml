@@ -1,28 +1,21 @@
-name: deploy
-
+name: Build and Deploy
 on:
   push:
-    branches: [master] # master 分支有 push 时触发
-    paths-ignore:   # 下列文件的变更不触发部署，可以自行添加
-      - README.md
-
+    branches:
+      - master
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
 
-      # 下载源码
-      # 这一步就是检出你的仓库并下载里面的代码到runner中,actions/checkout@v2是官方自己造的轮子，直接拿来用就行
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      # 打包构建
-      - name: Build
-        uses: actions/setup-node@master
-        with:
-          node-version: '16.x'
-      - run: yarn # 安装依赖
-      - run: yarn docs:build # 打包
+      - name: Install and Build 🔧 
+        run: |
+          yarn
+          yarn docs:build
+        # env:
+        #   NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.3
@@ -31,13 +24,46 @@ jobs:
           FOLDER: docs/.vuepress/dist
           ACCESS_TOKEN: ${{ secrets.DEPLOY_SECRET }}
 
-      # 部署到 GitHub pages
-      # - name: Deploy
-      #   uses: JamesIves/github-pages-deploy-action@v4.3.0 # 使用部署到 GitHub pages 的 action
-      #   with:
-      #     branch: gh-pages # The branch the action should deploy to.
-      #     publish_dir: docs/.vuepress/dist # 部署打包后的 dist 目录
-      #     github_token: ${{ secrets.DEPLOY_SECRET }} # secret 名
-      #     user_name: ${{ secrets.MY_USER_NAME }}
-      #     user_email: ${{ secrets.MY_USER_EMAIL }}
-      #     commit_message: 自动部署 # 部署时的 git 提交信息，自由填写
+# name: deploy
+
+# on:
+#   push:
+#     branches: [master] # master 分支有 push 时触发
+#     paths-ignore:   # 下列文件的变更不触发部署，可以自行添加
+#       - README.md
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+
+#       # 下载源码
+#       # 这一步就是检出你的仓库并下载里面的代码到runner中,actions/checkout@v2是官方自己造的轮子，直接拿来用就行
+#       - name: Checkout
+#         uses: actions/checkout@v2
+
+#       # 打包构建
+#       - name: Build
+#         uses: actions/setup-node@master
+#         with:
+#           node-version: '16.x'
+#       - run: yarn # 安装依赖
+#       - run: yarn docs:build # 打包
+
+#       - name: Deploy 🚀
+#         uses: JamesIves/github-pages-deploy-action@4.1.3
+#         with:
+#           BRANCH: gh-pages
+#           FOLDER: docs/.vuepress/dist
+#           ACCESS_TOKEN: ${{ secrets.DEPLOY_SECRET }}
+
+#       # 部署到 GitHub pages
+#       # - name: Deploy
+#       #   uses: JamesIves/github-pages-deploy-action@v4.3.0 # 使用部署到 GitHub pages 的 action
+#       #   with:
+#       #     branch: gh-pages # The branch the action should deploy to.
+#       #     publish_dir: docs/.vuepress/dist # 部署打包后的 dist 目录
+#       #     github_token: ${{ secrets.DEPLOY_SECRET }} # secret 名
+#       #     user_name: ${{ secrets.MY_USER_NAME }}
+#       #     user_email: ${{ secrets.MY_USER_EMAIL }}
+#       #     commit_message: 自动部署 # 部署时的 git 提交信息，自由填写
