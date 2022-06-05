@@ -35,4 +35,12 @@ module.exports = [
       link: '/components/pages/InputNumber',
     }]
   },
+  {
+    text: '其他',
+    collapsable: true,
+    children: [{
+      text: 'MAC命令行启动vscode',
+      link: encodeURI('/article/other/MAC命令行启动vscode'),
+    }]
+  },
 ]
