@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/ddd.jpg
+heroImage: /images/moon.png
 actions:
   - text: 开始
     link: /article/style/图片如何自适应容器/
