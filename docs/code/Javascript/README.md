@@ -4,7 +4,7 @@
 
 # 去掉空格
 
-```Javascript
+```js
 /**
  * @param { string } str 待处理字符串
  * @param  { number } type 去除空格类型 1-所有空格  2-前后空格  3-前空格 4-后空格 默认为1
@@ -28,7 +28,7 @@ export function trim(str, type = 1) {
 
 # 大小写转换
 
-```Javascript
+```js
 /**
  * @param { string } str 待转换的字符串
  * @param { number } type 1-全大写 2-全小写 3-首字母大写 其他-不转换
@@ -50,7 +50,7 @@ export function turnCase(str, type) {
 
 # base64 转 file
 
-```Javascript
+```js
 /**
  *  @param { base64 } base64
  *  @param { string } filename 转换后的文件名
@@ -71,7 +71,7 @@ export const base64ToFile = (base64, filename )=> {
 
 # base64 转 blob
 
-```Javascript
+```js
 /**
  *  @param { base64 } base64
  */
@@ -90,7 +90,7 @@ export const base64ToBlob = base64 => {
 
 # blob 转 file
 
-```Javascript
+```js
 /**
  *  @param { blob } blob
  *  @param { string } fileName
@@ -104,7 +104,7 @@ export const blobToFile = (blob, fileName) => {
 
 # file 转 base64
 
-```Javascript
+```js
 /**
  * @param { * } file 图片文件
  */
@@ -119,7 +119,7 @@ export const fileToBase64 = file => {
 
 # 复制文本
 
-```Typescript
+```js
 const handleCopyText = async (text:string) => {
   try {
     const clipboardObj = navigator.clipboard;
@@ -133,14 +133,14 @@ const handleCopyText = async (text:string) => {
 
 # 清除所有cookie
 
-```Javascript
+```js
 const clearCookies = document.cookie.split(';').forEach(cookie => document.cookie = cookie.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date(0).toUTCString()};path=/`));
 
 ```
 
 # 获取选中的文本
 
-```Javascript
+```js
 const getSelectedText = () => window.getSelection().toString();
 getSelectedText();
 ```

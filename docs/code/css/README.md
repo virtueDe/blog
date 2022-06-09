@@ -1,7 +1,7 @@
 # CSS 变量
 声明一个自定义属性，属性名需要以两个减号（--）开始，属性值则可以是任何有效的 CSS 值。和其他属性一样，自定义属性也是写在规则集之内的，如下：
 
-```CSS
+```css
 :root {
   --main-bg-color: brown;
 }
@@ -20,7 +20,7 @@ element {
 
 - 用于::-webkit-scrollbar-thumb 设置滚动条拇指（可拖动元素）的样式。
 
-```HTML
+```html
 <div class="custom-scrollbar">
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
@@ -31,7 +31,7 @@ element {
 </div>
 ```
 
-```CSS
+```css
 .custom-scrollbar {
   height: 70px;
   overflow-y: scroll;
