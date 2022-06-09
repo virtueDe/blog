@@ -5,7 +5,7 @@ module.exports = [
   },
   {
     text: '代码片段',
-    link: '/code/'
+    link: '/code/Javascript/',
     // children: [{
     //   text: '介绍',
     //   link: '/document/introduction/'
