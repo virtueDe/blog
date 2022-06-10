@@ -23,8 +23,8 @@ module.exports = [
     text: 'vue',
     collapsable: true,
     children: [{
-      text: '持续更新中...',
-      link: '/components/pages/InputNumber',
+      text: 'VueUse',
+      link: '/article/vue/VueUse/',
     }]
   },
   {
