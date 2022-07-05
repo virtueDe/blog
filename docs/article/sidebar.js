@@ -40,7 +40,11 @@ module.exports = [
     collapsable: true,
     children: [{
       text: 'MAC命令行启动vscode',
-      link: encodeURI('/article/other/MAC命令行启动vscode'),
+      link: encodeURI('/article/other/MAC命令行启动vscode/'),
+    },
+    {
+      text: 'MAC安装brew',
+      link: encodeURI('/article/other/MAC安装brew/'),
     }]
   },
 ]
