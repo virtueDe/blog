@@ -38,13 +38,19 @@ module.exports = [
   {
     text: '其他',
     collapsable: true,
-    children: [{
-      text: 'MAC命令行启动vscode',
-      link: encodeURI('/article/other/MAC命令行启动vscode/'),
-    },
-    {
-      text: 'MAC安装brew',
-      link: encodeURI('/article/other/MAC安装brew/'),
-    }]
+    children: [
+      {
+        text: 'MAC命令行启动vscode',
+        link: encodeURI('/article/other/MAC命令行启动vscode/'),
+      },
+      {
+        text: 'MAC安装brew',
+        link: encodeURI('/article/other/MAC安装brew/'),
+      },
+      {
+        text: '安装nvm和nrm',
+        link: encodeURI('/article/other/安装nvm和nrm/'),
+      }
+    ]
   },
 ]
