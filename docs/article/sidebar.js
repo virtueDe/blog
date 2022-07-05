@@ -22,10 +22,12 @@ module.exports = [
   {
     text: 'vue',
     collapsable: true,
-    children: [{
-      text: 'VueUse',
-      link: '/article/vue/VueUse/',
-    }]
+    children: [
+    //   {
+    //   text: 'VueUse',
+    //   link: '/article/vue/VueUse/',
+    // }
+  ]
   },
   {
     text: 'js',
