@@ -54,6 +54,10 @@ module.exports = [
       {
         text: '安装nvm和nrm',
         link: encodeURI('/article/other/安装nvm和nrm/'),
+      },
+      {
+        text: '面试点',
+        link: encodeURI('/article/other/面试点/'),
       }
     ]
   },
