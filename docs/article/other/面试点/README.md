@@ -108,4 +108,7 @@ string、boolean、null、undefined、NaN、number、symbol、Object
 
 状态： pending、reslove、reject
 all、allSettled 的区别： all 全部reslove 才会成功 ；allSettled 不会
-http
+
+## Proxy (pa ke )
+
+## object.defineProperty ()
