@@ -14,6 +14,10 @@ HTTP：http 传输的数据都是未加密的，也就是明文的。
 HTTPS：https 协议是由 http 和 ssl 协议构建的可进行
 加密传输和身份认证的网络协议，比 http 协议的安全性更高。
 
+### https 加密方式
+
+<https://segmentfault.com/a/1190000019976390>
+
 ## url 输入到返回请求的过程
 
 > url 解析 => 查找缓存 => DNS 域名解析 => 建立 TCP 连接 => 发送 http 请求 => 服务器响应返回结果 => 关闭 TCP 连接 => 浏览器渲染
@@ -59,6 +63,8 @@ HTTPS：https 协议是由 http 和 ssl 协议构建的可进行
 - 合成
 
 ## 浏览器事件循环机制（event loop）
+
+<https://juejin.cn/post/6955773607926579214>
 
 ### （同步）
 
