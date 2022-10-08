@@ -27,6 +27,10 @@ module.exports = [
     {
       text: '获取元素是父元素的第几个',
       link: encodeURI('/article/JavaScript/获取元素是父元素的第几个/'),
+    },
+    {
+      text: '选择（Selection）和范围（Range）',
+      link: encodeURI('/article/JavaScript/选择（Selection）和范围（Range）/'),
     }]
   },
   {
