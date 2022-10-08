@@ -27,3 +27,15 @@
   ```ts
   getSelection()?.toString();
   ```
+
+未完成
+
+参考： <https://zh.javascript.info/selection-range>
+
+<https://juejin.cn/post/7140078451205079054>
+
+<https://juejin.cn/post/7068232010304585741#heading-2>
+
+<https://developer.mozilla.org/zh-CN/docs/Web/API/Range>
+
+<https://developer.mozilla.org/zh-CN/docs/Web/API/Selection>
