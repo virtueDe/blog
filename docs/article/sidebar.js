@@ -7,10 +7,6 @@ module.exports = [
         text: '图片如何自适应显示',
         link: encodeURI('/article/style/图片如何自适应容器/'),
       }
-      // , {
-      //   text: '测试测试',
-      //   link: encodeURI('/article/style/测试测试/'),
-      // }
     ]
   },
   // {
@@ -22,6 +18,14 @@ module.exports = [
   //   }]
   // },
   {
+    text: 'JavaScript',
+    collapsable: true,
+    children: [{
+      text: '正则指南',
+      link: encodeURI('/article/JavaScript/正则指南/'),
+    }]
+  },
+  {
     text: 'vue',
     collapsable: true,
     children: [
@@ -31,14 +35,6 @@ module.exports = [
       }
     ]
   },
-  // {
-  //   text: 'js',
-  //   collapsable: true,
-  //   children: [{
-  //     text: '持续更新中...',
-  //     link: '/components/pages/InputNumber',
-  //   }]
-  // },
   {
     text: '其他',
     collapsable: true,
