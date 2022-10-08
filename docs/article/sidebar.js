@@ -23,6 +23,10 @@ module.exports = [
     children: [{
       text: '正则指南',
       link: encodeURI('/article/JavaScript/正则指南/'),
+    },
+    {
+      text: '获取元素是父元素的第几个',
+      link: encodeURI('/article/JavaScript/获取元素是父元素的第几个/'),
     }]
   },
   {
