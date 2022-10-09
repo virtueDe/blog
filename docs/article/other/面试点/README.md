@@ -117,8 +117,6 @@ js 是单线程语言，只有一个主线程来处理所有的执行任务。�
 
 协商缓存：强缓存失效后，浏览器携带缓存标识向服务器发起请求，由服务器根据缓存标识决定是否使用缓存的过程
 
-<!-- TODO:  -->
-
 ## 跨域
 
 跨域，是指浏览器不能执行其他网站的脚本。它是由浏览器的同源策略造成的，是浏览器对 JavaScript 实施的安全限制。
@@ -166,3 +164,17 @@ all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不�
 ## object.defineProperty () -->
 
 ## nextTick 原理？
+
+## 参考
+
+vue、node、webpack
+
+http版本区别可以参考: <https://juejin.cn/post/6844903976081555470#heading-107>
+
+浅看: <https://juejin.cn/post/6844903976693940231>
+
+浅看: <https://juejin.cn/post/7073869980411887652>
+
+浅看： <https://juejin.cn/post/7061588533214969892>
+
+浅看： <https://senior-frontend.pages.dev/>
