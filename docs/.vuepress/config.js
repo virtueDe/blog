@@ -1,3 +1,4 @@
+// "@vuepress/theme-blog": "^2.3.3",
 const { defaultTheme } = require('vuepress')
 const { searchPlugin } = require('@vuepress/plugin-search')
 const navbar = require('./config/navbar')
