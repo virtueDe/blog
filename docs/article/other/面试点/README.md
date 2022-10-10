@@ -9,14 +9,58 @@ HTTPS：是以安全为目标的 HTTP 通道，简单讲是 HTTP 的安全版，
 
 ### 区别
 
-HTTP：http 传输的数据都是未加密的，也就是明文的。
+HTTP：http 传输的数据都是未加密的，也就是明文的。默认端口 80
 
 HTTPS：https 协议是由 http 和 ssl 协议构建的可进行
-加密传输和身份认证的网络协议，比 http 协议的安全性更高。
+加密传输和身份认证的网络协议，比 http 协议的安全性更高。默认端口 443
 
 ### https 加密方式
 
-<https://segmentfault.com/a/1190000019976390>
+HTTPS 在传统的 HTTP 和 TCP 之间加了一层用于加密解密的 SSL/TLS 层（安全套接层 Secure Sockets Layer/安全传输层 Transport Layer Security）层。使用 HTTPS 必须要有一套自己的数字证书（包含公钥和私钥）。
+
+> <https://segmentfault.com/a/1190000019976390>
+
+解决的问题
+
+- 信息加密传输：第三方无法窃听；
+
+- 校验机制：一旦被篡改，通信双方会立刻发现；
+
+- 身份证书：防止身份被冒充。
+
+加密过程
+
+- 客户端请求服务器获取证书公钥
+
+- 客户端(SSL/TLS)解析证书（无效会弹出警告）
+
+- 生成随机值
+
+- 用公钥加密随机值生成密钥
+
+- 客户端将秘钥发送给服务器
+
+- 服务端用私钥解密秘钥得到随机值
+
+- 将信息和随机值混合在一起进行对称加密
+
+- 将加密的内容发送给客户端
+
+- 客户端用秘钥解密信息
+
+加密过程使用了对称加密和非对称加密
+
+- 对称加密: 客户端和服务端采用相同的密钥经行加密
+
+  > encrypt(明文，秘钥) = 密文
+
+  > decrypt(密文，秘钥) = 明文
+
+- 非对称加密：客户端通过公钥加密。服务端通过私钥解密
+
+  > encrypt(明文，公钥) = 密文
+
+  > decrypt(密文，私钥) = 明文
 
 ### http 版本区别
 
@@ -46,6 +90,37 @@ HTTPS：https 协议是由 http 和 ssl 协议构建的可进行
 
 - 服务器推送
 
+### TCP 与 http
+
+TCP 是传输控制协议
+
+#### 现代浏览器在与服务器建立了一个 TCP 连接后是否会在一个 HTTP 请求完成后断开？什么情况下会断开？
+
+解析：
+请求头中 Connection 属性决定了连接是否持久。
+HTTP/1.0 中 Connection 默认是 close 的，即每次请求都会重新建立和断开 TCP 连接；
+HTTP/1.1 中 Connection 默认是 keep-alive 的，即 tcp 连接可以复用，不用每次都要重新建立和断开 TCP 连接。
+一般情况下复用的 TCP 连接在等待设置的超时时间之后还没有被任何连接使用的话，TCP 连接就会主动断开。
+
+答案：默认情况下建立 TCP 连接不会断开，只有在请求报头中声明 Connection: close 才会在请求完成后关闭连接。
+
+#### 一个 TCP 连接可以对应几个 HTTP 请求？
+
+从上一个问题可知，如果维持连接的话，一个 TCP 连接是可以发送多个 HTTP 请求的
+
+#### 一个 TCP 连接中 HTTP 请求发送可以一起发送么（比如一起发三个请求，再三个响应一起接收）？
+
+答案：在 HTTP/1.1 存在 Pipelining 技术可以完成这个多个请求同时发送，但是由于浏览器默认关闭，所以可以认为这是不可行的。
+在 HTTP2 中由于 Multiplexing 特点的存在，多个 HTTP 请求可以在同一个 TCP 连接中并行进行。
+
+#### 为什么有的时候刷新页面不需要重新建立 SSL 连接？
+
+答案：TCP 连接有的时候会被浏览器和服务端维持一段时间。TCP 不需要重新建立，SSL 自然也会用之前的。
+
+#### 浏览器对同一 Host 建立 TCP 连接到数量有没有限制？
+
+答案：有。Chrome 最多允许对同一个 Host 建立六个 TCP 连接，不同的浏览器有一些区别。
+
 ## url 输入到返回请求的过程
 
 > url 解析 => 查找缓存 => DNS 域名解析 => 建立 TCP 连接 => 发送 http 请求 => 服务器响应返回结果 => 关闭 TCP 连接 => 浏览器渲染
@@ -74,6 +149,8 @@ HTTPS：https 协议是由 http 和 ssl 协议构建的可进行
 - html 类型，浏览器会进行页面解析。
 
 ### 渲染进程
+
+> 构建 dom 树=>构建渲染树=>布局渲染树=>绘制渲染树
 
 - 页面解析
 - 网络进程向渲染进程传输 HTML 数据
@@ -152,12 +229,35 @@ string、boolean、null、undefined、NaN、number、symbol、Object
 
 ## Promise
 
-状态： pending、reslove、reject
+状态： padding(准备状态：初始化成功、开始执行异步的任务)、fullfilled(成功状态)、rejected(失败状态)
+
 all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不会
 
 ## axios 基本实现
 
+> <https://cloud.tencent.com/developer/article/1794288> > <https://juejin.cn/post/6844903907500490766> > <https://juejin.cn/post/6856706569263677447#heading-2>
+
+<!-- TODO: -->
+
 ## vue3 与 vue2 区别
+
+- 响应式的api
+
+- 代码结构 tree shaking
+
+- 推荐 组合式api和hook
+
+- ts 支持
+
+- 不限于一个根节点
+
+## vue 响应式原理
+
+> <https://tsejx.github.io/vue-guidebook/infrastructure/vue2/reactivity/>
+
+## 生命周期
+
+## 组件通信
 
 <!-- ## Proxy (pa ke )
 
@@ -169,7 +269,7 @@ all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不�
 
 vue、node、webpack
 
-http版本区别可以参考: <https://juejin.cn/post/6844903976081555470#heading-107>
+http 版本区别可以参考: <https://juejin.cn/post/6844903976081555470#heading-107>
 
 浅看: <https://juejin.cn/post/6844903976693940231>
 
@@ -178,3 +278,5 @@ http版本区别可以参考: <https://juejin.cn/post/6844903976081555470#headin
 浅看： <https://juejin.cn/post/7061588533214969892>
 
 浅看： <https://senior-frontend.pages.dev/>
+
+选择图片格式： <https://juejin.cn/post/6844904097556987917>
