@@ -277,6 +277,6 @@ http 版本区别可以参考: <https://juejin.cn/post/6844903976081555470#headi
 
 浅看： <https://juejin.cn/post/7061588533214969892>
 
-浅看： <https://senior-frontend.pages.dev/>
+细看全栈知识点： <https://senior-frontend.pages.dev/>
 
-选择图片格式： <https://juejin.cn/post/6844904097556987917>
+可关注选择图片格式： <https://juejin.cn/post/6844904097556987917>
