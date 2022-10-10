@@ -241,11 +241,11 @@ all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不�
 
 ## vue3 与 vue2 区别
 
-- 响应式的api
+- 响应式的 api
 
 - 代码结构 tree shaking
 
-- 推荐 组合式api和hook
+- 推荐 组合式 api 和 hook
 
 - ts 支持
 
@@ -264,6 +264,52 @@ all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不�
 ## object.defineProperty () -->
 
 ## nextTick 原理？
+
+## Canvas
+
+### Canvas 文字编辑？
+
+> <https://github.com/forthealllight/blog/issues/60> 简单示例
+
+> <https://segmentfault.com/a/1190000008816574> 详细实现
+
+> <https://www.cnblogs.com/forzhaokang/p/15907371.html> 详细实现 仓库<https://github.com/zhaokang555/canvas-text-editor>
+
+### Canvas 判断点击区域在哪个的上面?
+
+><https://juejin.cn/post/7036019244215042078>
+
+- 交叉数法
+
+- 环绕数法
+
+- 像素检测
+
+- 基于透明度的检测
+
+- 基于随机颜色的检测
+
+### Canvas 性能优化
+
+> <https://www.cnblogs.com/fangsmile/p/14721283.html>
+
+离屏渲染？分层绘制？
+
+### canvas 文字图片模糊问题？
+
+> <https://cloud.tencent.com/developer/article/1501018>
+
+获取像素比 `devicePixelRatio`，该属性表示了屏幕的设备像素比，即用几个（通常是 2 个）像素点宽度来渲染 1 个像素。
+
+## 设计模式
+
+### 策略模式？
+
+### 工厂模式？
+
+### 单例模式？
+
+### 发布订阅模式？
 
 ## 参考
 
