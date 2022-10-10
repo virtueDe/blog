@@ -34,6 +34,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
+      # delete
+      - name: delete
+        run: rm -rf ./yarn.lock
+
       # 如果缓存没有命中，安装依赖
       - name: Install dependencies
         if: steps.yarn-cache.outputs.cache-hit != 'true'
