@@ -265,6 +265,8 @@ all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不�
 
 ## nextTick 原理？
 
+## hash和history 的区分与原理
+
 ## Canvas
 
 熟悉canvas绘制图形的API
