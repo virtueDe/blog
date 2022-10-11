@@ -269,7 +269,23 @@ all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不�
 
 熟悉canvas绘制图形的API
 
-### Canvas 文字编辑？
+`var ctx = canvas.getContext("2d");`
+
+- `beginPath()` 开始一段新路径
+
+- 绘制矩形  `ctx.fillRect(x,y,w,h)` 绘制矩形边框 `ctx.strokeRect(x,y,w,h)`
+
+- `clearRect(x,y,w,h)` 清除画布区域
+
+### Canvas 文字编辑
+
+- 判断坐标是否在文字编辑区域
+
+- 利用Textarea监听输入内容
+
+- 计算文字大小排版，行段页
+
+- 需要自己实现range&&select，还有排版
 
 > <https://github.com/forthealllight/blog/issues/60> 简单示例
 
@@ -281,9 +297,9 @@ all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不�
 
 ><https://juejin.cn/post/7036019244215042078>
 
-- 交叉数法
+- 交叉数法：利用点做射线，判断与图形边相交次数，奇数在内部，否则反之
 
-- 环绕数法
+- 环绕数法：利用点做向右的射线。。。。
 
 - 像素检测
 
@@ -295,7 +311,7 @@ all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不�
 
 > <https://www.cnblogs.com/fangsmile/p/14721283.html>
 
-离屏渲染？分层绘制？
+离屏渲染？分层绘制？局部绘制？
 
 ### canvas 文字图片模糊问题？
 
@@ -305,23 +321,72 @@ all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不�
 
 ### canvas 与svg 的区别
 
-？
+> Canvas
+
+- 通过 js 来绘制 2D图形。
+
+- canvas 图像单位是像素。
+
+- canvas 图像绘制完毕之后，浏览器将不再关注它，如果位置发生变换，就需要重新绘制。
+
+> SVG
+
+- svg 使用 XML 描述的2D图像。
+
+- svg 是基于 xml 的，所以 svg 中绘制图形还是使用的元素，js 给元素任意添加事件。
+
+- svg 绘制的图像是一个对象，如果对象的属性发生改变，浏览器将重新绘制图形。
+
+> 区别
+
+svg 是一种矢量图，而 canvas 依赖于分辨率。所以 svg 放大不会失真，但是 canvas 绘制的图形会失真。
+svg 支持事件处理器，而 canvas 不支持事件处理器。
+svg 中的文字独立于图像，文字可保留，可编辑和可搜索，canvas 的文本渲染能力弱。
+canvas 适合图像密集型的游戏，频繁地重绘图像，svg 绘制的复杂度高时减慢渲染的速度。
+canvas 绘制的图形可以多种格式 (jpg、png) 保存图片，但是 svg 绘制的只能以 .svg 格式保存，使用时可以引入 html 文件。
+canvas 适合开发游戏，svg 不适合游戏应用。
 
 ## elector
 
-熟悉主进程通信的api？
+### 主进程渲染进程通信
 
-### 跨进程？
+- `ipcMain.on()`  `mainWindow.webContents.send('事件名', 事件附加数据)`
 
-### 文件处理？
+- `ipcRenderer.sendSync()` `ipcRenderer.on()`
+
+tips: 其本质是发布订阅模式。进程之间的通信随意放置不管理就会像凌乱的蜘蛛网，比较建议的做法是统一文件管理
+
+### 窗口池？
+
+> <https://juejin.cn/post/7134519311003025438>
+
+### 端唤醒协议
+
+win监听 `electron.on('second-instance', ()=>{})`
+
+mac监听 `electron.on('open-url', () => {})`
+
+解析参数
+
+### 白屏问题
+
+- 显示loading||骨架屏
+
+- 预加载browserWindow，等渲染进程加载好了再通知主进程显示窗口
+
+### 文件处理及缓存？
+
+进一步封装node api提高扩展能力
 
 ### 数据库存储？
 
 ### 奇怪的弹窗？
 
-## WebAssembly
+## WebAssembly？
 
 ？
+
+## 团队协同的数据通信？
 
 ## 设计模式
 
