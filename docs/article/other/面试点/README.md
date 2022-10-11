@@ -267,6 +267,8 @@ all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不�
 
 ## Canvas
 
+熟悉canvas绘制图形的API
+
 ### Canvas 文字编辑？
 
 > <https://github.com/forthealllight/blog/issues/60> 简单示例
@@ -300,6 +302,22 @@ all、allSettled 的区别： all 全部 reslove 才会成功 ；allSettled 不�
 > <https://cloud.tencent.com/developer/article/1501018>
 
 获取像素比 `devicePixelRatio`，该属性表示了屏幕的设备像素比，即用几个（通常是 2 个）像素点宽度来渲染 1 个像素。
+
+### canvas 与svg 的区别
+
+？
+
+## elector
+
+熟悉主进程通信的api？
+
+## 跨进程？
+
+## 文件处理？
+
+## 数据库存储？
+
+## 奇怪的弹窗？
 
 ## 设计模式
 
