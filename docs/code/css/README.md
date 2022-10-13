@@ -1,4 +1,5 @@
-# CSS 变量
+## CSS 变量
+
 声明一个自定义属性，属性名需要以两个减号（--）开始，属性值则可以是任何有效的 CSS 值。和其他属性一样，自定义属性也是写在规则集之内的，如下：
 
 ```css
@@ -10,7 +11,7 @@ element {
 }
 ```
 
-# 自定义滚动条
+## 自定义滚动条
 
 为具有可滚动溢出的元素自定义滚动条样式。
 
@@ -42,12 +43,12 @@ element {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #1E3F20;
+  background: #1e3f20;
   border-radius: 12px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #4A7856;
+  background: #4a7856;
   border-radius: 12px;
 }
 ```
