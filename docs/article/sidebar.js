@@ -31,6 +31,10 @@ module.exports = [
     {
       text: '选择（Selection）和范围（Range）',
       link: encodeURI('/article/JavaScript/选择（Selection）和范围（Range）/'),
+    },
+    {
+      text: '文本编辑器开发经历',
+      link: encodeURI('/article/JavaScript/文本编辑器开发经历/'),
     }]
   },
   {
