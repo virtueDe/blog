@@ -406,6 +406,8 @@ vue、node、webpack
 
 http 版本区别可以参考: <https://juejin.cn/post/6844903976081555470#heading-107>
 
+细看: 被删的前端游乐场 <http://www.godbasin.com/>
+
 浅看: <https://juejin.cn/post/6844903976693940231>
 
 浅看: <https://juejin.cn/post/7073869980411887652>
