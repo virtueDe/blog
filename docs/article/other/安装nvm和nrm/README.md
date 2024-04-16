@@ -63,7 +63,7 @@ nvm 是 nodejs 的版本管理工具，可以在一个环境中同时安装多�
 
 好处是，开发调试不同 nodejs 应用变得更省心，随时切换所需要的版本。
 
-## 安装
+## 安装(MAC)
 
 > 注意： 有 node 需要先卸载
 
@@ -74,6 +74,10 @@ nvm 是 nodejs 的版本管理工具，可以在一个环境中同时安装多�
 ```
 
 注：0.33.8 是版本，版本号换成最新的就行
+
+## 安装(Windows)
+
+win 版本点击链接 <https://github.com/coreybutler/nvm-windows/releases> 去下载安装即可使用
 
 ## 使用
 
