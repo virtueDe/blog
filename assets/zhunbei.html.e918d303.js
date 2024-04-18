@@ -1,0 +1,1 @@
+const e={key:"v-55d74276",path:"/article/other/%E9%9D%A2%E8%AF%95%E7%82%B9/zhunbei.html",title:"\u51C6\u5907",lang:"zh-CN",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1713254419e3,contributors:[{name:"xiaoling",email:"virtueDe@163.com",commits:1}]},filePathRelative:"article/other/\u9762\u8BD5\u70B9/zhunbei.md"};export{e as data};
