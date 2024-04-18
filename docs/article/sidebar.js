@@ -68,6 +68,10 @@ module.exports = [
         link: encodeURI('/article/other/windows安装node-canvas/'),
       },
       {
+        text: 'windows配置npm全局下载和缓存目录',
+        link: encodeURI('/article/other/windows配置npm全局下载和缓存目录/'),
+      },
+      {
         text: '面试点',
         link: encodeURI('/article/other/面试点/'),
       },
