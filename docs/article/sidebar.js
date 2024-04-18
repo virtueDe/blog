@@ -64,9 +64,13 @@ module.exports = [
         link: encodeURI('/article/other/安装nvm和nrm/'),
       },
       {
+        text: 'windows安装node-canvas',
+        link: encodeURI('/article/other/windows安装node-canvas/'),
+      },
+      {
         text: '面试点',
         link: encodeURI('/article/other/面试点/'),
-      }
+      },
     ]
   },
 ]
